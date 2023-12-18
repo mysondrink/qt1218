@@ -30,7 +30,14 @@ find_package(Qt${QT_VERSION_MAJOR}
         Gui
         Widgets
 )
-qt_standard_project_setup()
+# qt_standard_project_setup()
+
+#头文件包含
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/gui
+                    ${CMAKE_CURRENT_SOURCE_DIR}/func
+                    ${CMAKE_CURRENT_SOURCE_DIR}/inf
+                    ${CMKAE_CURRENT_SOURCE_DIR}
+)
 
 #源文件包含
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} PROJECT_SOURCES)
@@ -59,7 +66,7 @@ else()
     else()
         add_executable(qt1218
             ${PROJECT_SOURCES} ${GUI_SOURCES} ${FUNC_SOURCES} ${INF_SOURCES}
-             "func/homepage.h")
+            func/homepage.h func/homepage.cpp "func/syspage.cpp" "func/syspage.h")
     endif()
 endif()
 

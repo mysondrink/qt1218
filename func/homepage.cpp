@@ -42,25 +42,50 @@
  *
  */
 #include "homepage.h"
-#include "home.h"
-#include <QWidget>
 
-homepage::homepage(QWidget* parent)
+
+homePage::homePage(QWidget* parent)
 	: QWidget(parent)
 	, ui(new Ui::homeClass)
 {
 	ui->setupUi(this);
+	this->InitUI();
 }
 
-homepage::~homepage() noexcept
+homePage::~homePage() noexcept
 {
 	delete ui;
 }
 
-void homepage::on_btnConfirm_clicked() {
-	qDebug() << "confirm!";
+void homePage::InitUI() {
+	this->setFocusPolicy(Qt::NoFocus);
 }
 
-void homepage::on_btnInfo_clicked() {
+void homePage::on_btnConfirm_clicked() {
+	QString ip_addr = this->ui->lineEdit->text();
+	CheckConnectThread* thread = new CheckConnectThread(ip_addr);
+	connect(thread, SIGNAL(update_json(JSON)), this, SLOT(getInfo(JSON)));
+	thread->start();
+}
+
+void homePage::on_btnInfo_clicked() {
 	qDebug() << "info!";
+	QMessageBox::about(NULL, "about", "<font color='red'>软件使用说明</font>");
+}
+
+void homePage::getInfo(JSON msg) {
+	QString info_msg = msg.info;
+	int code_msg = msg.code;
+	QThread* status_msg = msg.status;
+	qDebug() << info_msg;
+	if (code_msg == failed_code) {
+		QMessageBox::critical(NULL, tr("错误"), tr("ip地址错误，请确定ip地址"));
+		return;
+	}
+	else if (code_msg == succeed_code) {
+		sysPage* nextPage = new sysPage();
+		connect(nextPage, SIGNAL(closed()), this, SLOT(show()));
+		nextPage->show();
+		this->hide();
+	}
 }

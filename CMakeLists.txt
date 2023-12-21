@@ -23,12 +23,13 @@ message(STATUS  "system_version:" ${CMAKE_HOST_SYSTEM_PROCESSOR}) #系统版本
 message(STATUS  "system_kernel:" ${CMAKE_HOST_SYSTEM_VERSION}) #系统内核版本
 
 # 库查找
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets Core Gui REQUIRED)
+find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets Core Gui Network REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR}
     COMPONENTS
         Core
         Gui
         Widgets
+        Network
 )
 # qt_standard_project_setup()
 
@@ -66,7 +67,7 @@ else()
     else()
         add_executable(qt1218
             ${PROJECT_SOURCES} ${GUI_SOURCES} ${FUNC_SOURCES} ${INF_SOURCES}
-            func/homepage.h func/homepage.cpp "func/syspage.cpp" "func/syspage.h")
+        )
     endif()
 endif()
 
@@ -76,5 +77,6 @@ target_link_libraries(qt1218
         Qt${QT_VERSION_MAJOR}::Widgets 
         Qt${QT_VERSION_MAJOR}::Gui 
         Qt${QT_VERSION_MAJOR}::Core
+        Qt${QT_VERSION_MAJOR}::Network
 )
 

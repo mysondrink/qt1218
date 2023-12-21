@@ -43,10 +43,13 @@
  */
 #ifndef QT1218_SYSPAGE_H
 #define QT1218_SYSPAGE_H
-#include <QWidget.h>
+#include <QWidget>
+#include <QDebug>
+#include "sys.h"
+#include "searchpage.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class Form; }
+namespace Ui { class SysForm; }
 QT_END_NAMESPACE
 
 class sysPage : public QWidget {
@@ -55,9 +58,15 @@ public:
 	sysPage(QWidget* parent = nullptr);
 	~sysPage();
 private:
-	Ui::Form* ui;
+	Ui::SysForm* ui;
+	void InitUI();
+	void closeEvent(QCloseEvent*);
 private slots:
 	void on_btnReturn_clicked();
+	void on_btnUser_clicked();
+	void on_btnSearch_clicked();
+signals:
+	void closed();
 };
 
 #endif // !QT1218_SYSPAGE_H

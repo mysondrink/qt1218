@@ -1,0 +1,4 @@
+C:/Users/YGS_Tu/Desktop/code/c/qt1218/cmake-build-debug/CMakeFiles/qt1218.dir
+C:/Users/YGS_Tu/Desktop/code/c/qt1218/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/YGS_Tu/Desktop/code/c/qt1218/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/YGS_Tu/Desktop/code/c/qt1218/cmake-build-debug/CMakeFiles/qt1218_autogen.dir

@@ -43,24 +43,35 @@
  */
 #ifndef HOMEPAGE_H
 #define HOMEPAGE_H
-
+#include "home.h"
+#include <QWidget>
+#include <QDebug>
+#include "syspage.h"
+#include "connectThread.h"
 #include <QtWidgets>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class homeClass; }
 QT_END_NAMESPACE
 
-class homepage : public QWidget
+class homePage : public QWidget
 {
-    Q_OBJECT
-
+Q_OBJECT
 public:
-    homepage(QWidget* parent = nullptr);
-    ~homepage();
-
+    homePage(QWidget* parent = nullptr);
+    ~homePage();
+    struct JSON {
+        QString info;
+        int code;
+        QThread* status;
+    };
 private:
     Ui::homeClass *ui;
+    const int failed_code = 404;
+    const int succeed_code = 202;
+    void InitUI();
 private slots:
+    void getInfo(JSON msg);
     void on_btnInfo_clicked();
     void on_btnConfirm_clicked();
 };

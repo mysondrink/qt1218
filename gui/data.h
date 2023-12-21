@@ -21,7 +21,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_DataForm
 {
 public:
     QHBoxLayout *horizontalLayout;
@@ -38,16 +38,16 @@ public:
     QPushButton *btnReport;
     QSpacerItem *verticalSpacer;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *DataForm)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(800, 600);
-        horizontalLayout = new QHBoxLayout(Form);
+        if (DataForm->objectName().isEmpty())
+            DataForm->setObjectName(QString::fromUtf8("DataForm"));
+        DataForm->resize(800, 600);
+        horizontalLayout = new QHBoxLayout(DataForm);
         horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        frame = new QFrame(Form);
+        frame = new QFrame(DataForm);
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
@@ -115,27 +115,27 @@ public:
         horizontalLayout->addWidget(frame);
 
 
-        retranslateUi(Form);
+        retranslateUi(DataForm);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(DataForm);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *DataForm)
     {
-        Form->setWindowTitle(QCoreApplication::translate("Form", "Form", nullptr));
-        picLabel->setText(QCoreApplication::translate("Form", "TextLabel", nullptr));
-        photoLabel->setText(QCoreApplication::translate("Form", "TextLabel", nullptr));
-        btnPrint->setText(QCoreApplication::translate("Form", "\346\211\223\345\215\260", nullptr));
-        btnDownload->setText(QCoreApplication::translate("Form", "\344\270\213\350\275\275", nullptr));
-        btnPic->setText(QCoreApplication::translate("Form", "\345\233\276\345\203\217", nullptr));
-        btnData->setText(QCoreApplication::translate("Form", "\346\225\260\346\215\256", nullptr));
-        btnReport->setText(QCoreApplication::translate("Form", "\346\212\245\345\221\212\345\215\225", nullptr));
+        DataForm->setWindowTitle(QCoreApplication::translate("DataForm", "Form", nullptr));
+        picLabel->setText(QCoreApplication::translate("DataForm", "TextLabel", nullptr));
+        photoLabel->setText(QCoreApplication::translate("DataForm", "TextLabel", nullptr));
+        btnPrint->setText(QCoreApplication::translate("DataForm", "\346\211\223\345\215\260", nullptr));
+        btnDownload->setText(QCoreApplication::translate("DataForm", "\344\270\213\350\275\275", nullptr));
+        btnPic->setText(QCoreApplication::translate("DataForm", "\345\233\276\345\203\217", nullptr));
+        btnData->setText(QCoreApplication::translate("DataForm", "\346\225\260\346\215\256", nullptr));
+        btnReport->setText(QCoreApplication::translate("DataForm", "\346\212\245\345\221\212\345\215\225", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class DataForm: public Ui_DataForm {};
 } // namespace Ui
 
 QT_END_NAMESPACE

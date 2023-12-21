@@ -19,70 +19,70 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_SysForm
 {
 public:
     QHBoxLayout *horizontalLayout;
     QFrame *frame;
     QPushButton *btnReturn;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QPushButton *btnUser;
-    QPushButton *btnData;
+    QPushButton *btnSearch;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *SysForm)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(600, 400);
-        horizontalLayout = new QHBoxLayout(Form);
+        if (SysForm->objectName().isEmpty())
+            SysForm->setObjectName(QString::fromUtf8("SysForm"));
+        SysForm->resize(600, 400);
+        horizontalLayout = new QHBoxLayout(SysForm);
         horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        frame = new QFrame(Form);
+        frame = new QFrame(SysForm);
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         btnReturn = new QPushButton(frame);
         btnReturn->setObjectName(QString::fromUtf8("btnReturn"));
         btnReturn->setGeometry(QRect(500, 330, 75, 23));
-        widget = new QWidget(frame);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(210, 100, 181, 151));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(frame);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(210, 100, 181, 151));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        btnUser = new QPushButton(widget);
+        btnUser = new QPushButton(layoutWidget);
         btnUser->setObjectName(QString::fromUtf8("btnUser"));
 
         verticalLayout->addWidget(btnUser);
 
-        btnData = new QPushButton(widget);
-        btnData->setObjectName(QString::fromUtf8("btnData"));
+        btnSearch = new QPushButton(layoutWidget);
+        btnSearch->setObjectName(QString::fromUtf8("btnSearch"));
 
-        verticalLayout->addWidget(btnData);
+        verticalLayout->addWidget(btnSearch);
 
 
         horizontalLayout->addWidget(frame);
 
 
-        retranslateUi(Form);
+        retranslateUi(SysForm);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(SysForm);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *SysForm)
     {
-        Form->setWindowTitle(QCoreApplication::translate("Form", "Form", nullptr));
-        btnReturn->setText(QCoreApplication::translate("Form", "\350\277\224\345\233\236", nullptr));
-        btnUser->setText(QCoreApplication::translate("Form", "\347\224\250\346\210\267\347\256\241\347\220\206", nullptr));
-        btnData->setText(QCoreApplication::translate("Form", "\350\265\204\346\272\220\347\256\241\347\220\206", nullptr));
+        SysForm->setWindowTitle(QCoreApplication::translate("SysForm", "Form", nullptr));
+        btnReturn->setText(QCoreApplication::translate("SysForm", "\350\277\224\345\233\236", nullptr));
+        btnUser->setText(QCoreApplication::translate("SysForm", "\347\224\250\346\210\267\347\256\241\347\220\206", nullptr));
+        btnSearch->setText(QCoreApplication::translate("SysForm", "\350\265\204\346\272\220\347\256\241\347\220\206", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class SysForm: public Ui_SysForm {};
 } // namespace Ui
 
 QT_END_NAMESPACE

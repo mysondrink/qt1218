@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>SysForm</class>
+ <widget class="QWidget" name="SysForm">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -50,7 +50,7 @@
        <string>返回</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -68,7 +68,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="btnData">
+        <widget class="QPushButton" name="btnSearch">
          <property name="text">
           <string>资源管理</string>
          </property>

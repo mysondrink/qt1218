@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QDateEdit>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -23,7 +24,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_SearchForm
 {
 public:
     QHBoxLayout *horizontalLayout_2;
@@ -31,27 +32,27 @@ public:
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
-    QComboBox *dateCb;
+    QDateEdit *dateEdit;
     QLabel *label_2;
     QComboBox *typeCb;
     QPushButton *btnConfirm;
     QPushButton *btnReturn;
     QTableView *tableView;
     QHBoxLayout *horizontalLayout_3;
-    QPushButton *pushButton;
-    QLabel *label_3;
-    QPushButton *pushButton_2;
+    QPushButton *btnPre;
+    QLabel *pageLabel;
+    QPushButton *btnNext;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *SearchForm)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QString::fromUtf8("Form"));
-        Form->resize(1300, 800);
-        horizontalLayout_2 = new QHBoxLayout(Form);
+        if (SearchForm->objectName().isEmpty())
+            SearchForm->setObjectName(QString::fromUtf8("SearchForm"));
+        SearchForm->resize(1300, 800);
+        horizontalLayout_2 = new QHBoxLayout(SearchForm);
         horizontalLayout_2->setSpacing(0);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        frame = new QFrame(Form);
+        frame = new QFrame(SearchForm);
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
@@ -64,10 +65,10 @@ public:
 
         horizontalLayout->addWidget(label);
 
-        dateCb = new QComboBox(frame);
-        dateCb->setObjectName(QString::fromUtf8("dateCb"));
+        dateEdit = new QDateEdit(frame);
+        dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
 
-        horizontalLayout->addWidget(dateCb);
+        horizontalLayout->addWidget(dateEdit);
 
         label_2 = new QLabel(frame);
         label_2->setObjectName(QString::fromUtf8("label_2"));
@@ -99,20 +100,20 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        pushButton = new QPushButton(frame);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        btnPre = new QPushButton(frame);
+        btnPre->setObjectName(QString::fromUtf8("btnPre"));
 
-        horizontalLayout_3->addWidget(pushButton);
+        horizontalLayout_3->addWidget(btnPre);
 
-        label_3 = new QLabel(frame);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        pageLabel = new QLabel(frame);
+        pageLabel->setObjectName(QString::fromUtf8("pageLabel"));
 
-        horizontalLayout_3->addWidget(label_3);
+        horizontalLayout_3->addWidget(pageLabel);
 
-        pushButton_2 = new QPushButton(frame);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        btnNext = new QPushButton(frame);
+        btnNext->setObjectName(QString::fromUtf8("btnNext"));
 
-        horizontalLayout_3->addWidget(pushButton_2);
+        horizontalLayout_3->addWidget(btnNext);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
@@ -121,27 +122,27 @@ public:
         horizontalLayout_2->addWidget(frame);
 
 
-        retranslateUi(Form);
+        retranslateUi(SearchForm);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(SearchForm);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *SearchForm)
     {
-        Form->setWindowTitle(QCoreApplication::translate("Form", "Form", nullptr));
-        label->setText(QCoreApplication::translate("Form", "\346\227\266\351\227\264", nullptr));
-        label_2->setText(QCoreApplication::translate("Form", "\350\247\204\346\240\274", nullptr));
-        btnConfirm->setText(QCoreApplication::translate("Form", "\346\237\245\346\211\276", nullptr));
-        btnReturn->setText(QCoreApplication::translate("Form", "\350\277\224\345\233\236", nullptr));
-        pushButton->setText(QCoreApplication::translate("Form", "\344\270\212\344\270\200\351\241\265", nullptr));
-        label_3->setText(QCoreApplication::translate("Form", "\351\241\265\346\225\260", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Form", "\344\270\213\344\270\200\351\241\265", nullptr));
+        SearchForm->setWindowTitle(QCoreApplication::translate("SearchForm", "Form", nullptr));
+        label->setText(QCoreApplication::translate("SearchForm", "\346\227\266\351\227\264", nullptr));
+        label_2->setText(QCoreApplication::translate("SearchForm", "\350\247\204\346\240\274", nullptr));
+        btnConfirm->setText(QCoreApplication::translate("SearchForm", "\346\237\245\346\211\276", nullptr));
+        btnReturn->setText(QCoreApplication::translate("SearchForm", "\350\277\224\345\233\236", nullptr));
+        btnPre->setText(QCoreApplication::translate("SearchForm", "\344\270\212\344\270\200\351\241\265", nullptr));
+        pageLabel->setText(QCoreApplication::translate("SearchForm", "\351\241\265\346\225\260", nullptr));
+        btnNext->setText(QCoreApplication::translate("SearchForm", "\344\270\213\344\270\200\351\241\265", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class SearchForm: public Ui_SearchForm {};
 } // namespace Ui
 
 QT_END_NAMESPACE

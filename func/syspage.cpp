@@ -42,10 +42,8 @@
  *
  */
 #include "syspage.h"
-#include "sys.h"
-#include <QWidget.h>
 
-sysPage::sysPage(QWidget* parent) : QWidget(parent), ui(new Ui::Form){
+sysPage::sysPage(QWidget* parent) : QWidget(parent), ui(new Ui::SysForm){
 	ui->setupUi(this);
 }
 
@@ -53,6 +51,26 @@ sysPage::~sysPage() noexcept {
 	delete ui;
 }
 
+void sysPage::InitUI() {
+	this->setFocusPolicy(Qt::NoFocus);
+}
+
+void sysPage::closeEvent(QCloseEvent *) {
+	emit this->closed();
+}
+
 void sysPage::on_btnReturn_clicked() {
-	qDebug() << "return!";
+	emit this->closed();
+	this->close();
+}
+
+void sysPage::on_btnUser_clicked() {
+	qDebug() << "user!";
+}
+
+void sysPage::on_btnSearch_clicked() {
+	searchPage* next = new searchPage();
+	connect(next, SIGNAL(closed()), this, SLOT(show()));
+	this->hide();
+	next->show();
 }

@@ -89,9 +89,30 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="pageLabel">
+         <widget class="QLabel" name="label1">
           <property name="text">
            <string>页数</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="total_label">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>当前页数</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="page_label">
+          <property name="text">
+           <string/>
           </property>
          </widget>
         </item>

@@ -65,11 +65,13 @@ void homePage::on_btnConfirm_clicked() {
 	QString ip_addr = this->ui->lineEdit->text();
 	CheckConnectThread* thread = new CheckConnectThread(ip_addr);
 	connect(thread, SIGNAL(update_json(JSON)), this, SLOT(getInfo(JSON)));
+	connect(thread, SIGNAL(), this, SLOT());
 	thread->start();
 }
 
 void homePage::on_btnInfo_clicked() {
 	qDebug() << "info!";
+	//QApplication::setQuitOnLastWindowClosed(false);
 	QMessageBox::about(NULL, "about", "<font color='red'>软件使用说明</font>");
 }
 
@@ -79,6 +81,7 @@ void homePage::getInfo(JSON msg) {
 	QThread* status_msg = msg.status;
 	qDebug() << info_msg;
 	if (code_msg == failed_code) {
+		//QApplication::setQuitOnLastWindowClosed(false);
 		QMessageBox::critical(NULL, tr("错误"), tr("ip地址错误，请确定ip地址"));
 		return;
 	}

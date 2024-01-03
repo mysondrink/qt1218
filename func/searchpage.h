@@ -41,13 +41,14 @@
  *
  *	EASY C++
  */
+#if _MSC_VER >= 1600 //VS2015>VS>VS2010, MSVC VER= 10.0 -14.0
+#pragma execution_character_set("utf-8")
+#endif
 #ifndef QT1218_SEARCHPAGE_H
 #define QT1218_SEARCHPAGE_H
 #include <QWidget>
 #include <QDebug>
 #include <QDatetime>
-#include "search.h"
-#include "searchThread.h"
 #include <QMessageBox>
 #include <QJsonObject>
 #include <QJsonDocument>
@@ -56,6 +57,11 @@
 #include <QStandardItem>
 #include <QStandardItemModel>
 #include <QAbstractItemView>
+#include <QByteArray>
+#include <QSettings>
+#include "search.h"
+#include "searchThread.h"
+#include "connectThread.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class SearchForm; }
@@ -70,6 +76,9 @@ public:
 		int code;
 		QByteArray data;
 	};
+	QString search_time;
+	QString search_type;
+	int total_page;
 private:
 	Ui::SearchForm* ui;
 	void InitUI();
@@ -78,6 +87,7 @@ private:
 	void showDataTable();
 	void setDataTable();
 	QStandardItemModel model;
+	void setReagentType();
 protected:
 	const int failed_code = 404;
 	const int succeed_code = 202;
@@ -86,7 +96,8 @@ private slots:
 	void on_btnConfirm_clicked();
 	void on_btnPre_clicked();
 	void on_btnNext_clicked();
-	void getJsonData(MYJSON msg);
+	void getJsonData(MYJSON);
+	void getTypeInfo(QByteArray);
 signals:
 	void closed();
 };

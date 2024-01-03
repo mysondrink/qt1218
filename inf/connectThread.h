@@ -50,6 +50,7 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QSettings>
+#include <QByteArray>
 
 class CheckConnectThread : public QThread {
 	Q_OBJECT
@@ -70,6 +71,7 @@ protected:
 signals:
 	void finished();
 	void update_json(JSON dict);
+	void update_total(QByteArray);
 private:
 	QString ip_addr;
 	QNetworkAccessManager* manager;

@@ -57,7 +57,7 @@
 class GetInfoThread : public QThread {
 	Q_OBJECT
 public:
-	GetInfoThread(QObject* parent = nullptr);
+	GetInfoThread(QString, QString, int, int, QObject* parent = nullptr);
 	struct MYJSON {
 		int code;
 		QByteArray data;
@@ -78,6 +78,10 @@ private:
 	QString str1;
 	QNetworkAccessManager* manager;
 	QNetworkReply* reply;
+	QString search_time;
+	QString search_type;
+	int page_num;
+	int page_size;
 private slots:
 	void onRequestFinished(QNetworkReply* reply);
 };

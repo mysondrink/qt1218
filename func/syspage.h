@@ -39,7 +39,7 @@
  *              ,,,rHAri1h1rh&@#353Sh:          8@@@@@@@@@@@@@@@@@@@@@@@@@#:  
  *            .A3hH@#5S553&@@#h   i:i9S          #@@@@@@@@@@@@@@@@@@@@@@@@@A.
  *
- *
+ *	EASY C++
  */
 #ifndef QT1218_SYSPAGE_H
 #define QT1218_SYSPAGE_H

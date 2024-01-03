@@ -40,7 +40,10 @@ public:
     QTableView *tableView;
     QHBoxLayout *horizontalLayout_3;
     QPushButton *btnPre;
-    QLabel *pageLabel;
+    QLabel *label1;
+    QLabel *total_label;
+    QLabel *label_3;
+    QLabel *page_label;
     QPushButton *btnNext;
 
     void setupUi(QWidget *SearchForm)
@@ -105,10 +108,25 @@ public:
 
         horizontalLayout_3->addWidget(btnPre);
 
-        pageLabel = new QLabel(frame);
-        pageLabel->setObjectName(QString::fromUtf8("pageLabel"));
+        label1 = new QLabel(frame);
+        label1->setObjectName(QString::fromUtf8("label1"));
 
-        horizontalLayout_3->addWidget(pageLabel);
+        horizontalLayout_3->addWidget(label1);
+
+        total_label = new QLabel(frame);
+        total_label->setObjectName(QString::fromUtf8("total_label"));
+
+        horizontalLayout_3->addWidget(total_label);
+
+        label_3 = new QLabel(frame);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        horizontalLayout_3->addWidget(label_3);
+
+        page_label = new QLabel(frame);
+        page_label->setObjectName(QString::fromUtf8("page_label"));
+
+        horizontalLayout_3->addWidget(page_label);
 
         btnNext = new QPushButton(frame);
         btnNext->setObjectName(QString::fromUtf8("btnNext"));
@@ -135,7 +153,10 @@ public:
         btnConfirm->setText(QCoreApplication::translate("SearchForm", "\346\237\245\346\211\276", nullptr));
         btnReturn->setText(QCoreApplication::translate("SearchForm", "\350\277\224\345\233\236", nullptr));
         btnPre->setText(QCoreApplication::translate("SearchForm", "\344\270\212\344\270\200\351\241\265", nullptr));
-        pageLabel->setText(QCoreApplication::translate("SearchForm", "\351\241\265\346\225\260", nullptr));
+        label1->setText(QCoreApplication::translate("SearchForm", "\351\241\265\346\225\260", nullptr));
+        total_label->setText(QString());
+        label_3->setText(QCoreApplication::translate("SearchForm", "\345\275\223\345\211\215\351\241\265\346\225\260", nullptr));
+        page_label->setText(QString());
         btnNext->setText(QCoreApplication::translate("SearchForm", "\344\270\213\344\270\200\351\241\265", nullptr));
     } // retranslateUi
 

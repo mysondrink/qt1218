@@ -86,6 +86,8 @@ void CheckConnectThread::checkUrlFinished(QNetworkReply* reply)
         emit_json.code = succeed_code;
         emit_json.status = NULL;
         emit this->update_json(emit_json);
+        QByteArray data = reply->readAll();
+        emit this->update_total(data);
     }
     else {
         qDebug() << "URL is not reachable! Error: " << reply->errorString();
